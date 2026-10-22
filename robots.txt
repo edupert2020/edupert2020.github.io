@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://edupert2020.github.io/sitemap.xml

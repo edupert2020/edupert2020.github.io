@@ -1,0 +1,55 @@
+{% if not body_only %}<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% endif %}<title>{{ page_title }}</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="{{ page_desc }}">
+<meta name="keywords" content="{{ p.keywords|join(', ') }}">
+<meta name="author" content="허진호">
+{% if not preview %}<link rel="canonical" href="{{ p.site_url }}/{{ path }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ p.site_url }}/{{ path }}">
+<meta property="og:image" content="{{ p.site_url }}/assets/img/profile.jpg">
+<meta property="og:locale" content="ko_KR">
+{% if p.naver_verification %}<meta name="naver-site-verification" content="{{ p.naver_verification }}">{% endif %}
+{% if p.google_verification %}<meta name="google-site-verification" content="{{ p.google_verification }}">{% endif %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script type="application/ld+json">{{ jsonld|safe }}</script>
+{% endif %}
+<style>
+{% if font_face %}{{ font_face|safe }}{% endif %}
+{{ css|safe }}
+</style>
+{% if not body_only %}</head>
+<body>{% endif %}
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="{{ root }}index.html"><img class="brand-fig" src="{{ root }}assets/img/tup-figure.svg" alt=""><span class="brand-name">허진호 강사</span><span class="brand-org">땡큐플러스</span></a>
+    <nav class="nav" aria-label="주요 메뉴">
+      {% for href, label, key in nav %}<a href="{{ root }}{{ href }}"{% if key == active %} aria-current="page"{% endif %}>{{ label }}</a>{% endfor %}
+    </nav>
+  </div>
+</header>
+<main id="main">
+{{ content|safe }}
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <div>
+      <p class="foot-name">허진호 강사 · 땡큐플러스(Thank U Plus) 대표</p>
+      <p class="foot-meta">리더십 · 업무성과 · 조직활성화 기업교육</p>
+    </div>
+    <div class="foot-contact">
+      <p>강의 문의 <span class="sel">{{ p.email }}</span></p>
+      <p>전화 <span class="sel">{{ p.phone }}</span></p>
+      <p><a href="{{ p.blog }}" rel="noopener" target="_blank">네이버 블로그</a>{% if p.youtube %} · <a href="{{ p.youtube }}" rel="noopener" target="_blank">유튜브 리더의 한 장면</a>{% endif %}</p>
+    </div>
+  </div>
+</footer>
+{% if not body_only %}</body>
+</html>{% endif %}

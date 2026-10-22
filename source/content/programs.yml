@@ -1,0 +1,305 @@
+# 과정 카탈로그 — 사이트 '프로그램' 메뉴의 원본 데이터
+# 새 과정을 추가하거나 고칠 때는 이 파일만 수정하면 페이지가 다시 만들어집니다.
+
+categories:
+  - id: leadership
+    name: 리더십
+    desc: 팀장·파트장·중간관리자가 성과와 사람을 함께 이끄는 법
+  - id: performance
+    name: 업무성과
+    desc: 기획·보고·업무관리·문제해결 등 일 잘하는 방법
+  - id: org
+    name: 소통·조직활성화
+    desc: 함께 일하는 방식과 조직의 변화를 만드는 과정
+
+courses:
+  - slug: team-leader-leadership
+    cat: leadership
+    title: 팀장 리더십
+    subtitle: 체스마스터형이 아닌 정원사형 리더로
+    target: 신임·예비 팀장, 팀장 승진자
+    hours: 8시간 (16시간 확장형 가능)
+    summary: >-
+      팀원의 성숙도에 맞춰 동기부여·업무지시·위임·코칭을 선택하는 성과창출 리더십과,
+      소통·신뢰를 바탕으로 한 조직관리를 사례와 실습 중심으로 다룹니다.
+    modules:
+      - name: 리더의 역할과 리더십 이해
+        hours: 0.5H
+        points: [달라진 세상 vs 달라지지 않은 리더, 리더의 역할(성과관리·조직관리), 리더의 유형 — 체스마스터형 vs 정원사형]
+      - name: 성과창출 — 임파워먼트
+        hours: 4.0H
+        points: [팀원 성숙도에 따른 전략 선택, 동기부여(내적 동기 6요인), 구조화된 업무지시(What·Why·How), 업무 위임 시나리오와 롤플레이, 코칭(관찰·질문·피드백)]
+      - name: 소통과 협업
+        hours: 2.0H
+        points: [장자로부터 배우는 소통의 지혜, 세대 간 생각 차이와 소통, 협업 구축의 3요소]
+      - name: 신뢰
+        hours: 1.5H
+        points: ["원칙과 신뢰 — '진실을 말할 것인가'", 나만의 리더 원칙 만들기, 신뢰의 원천(역량·관계·행동), 변화 실천계획]
+    signature: [정원사들의 일하는 방식, 지식의 저주(박자 맞히기), 진실을 말할 것인가, 블럭 쌓기 게임]
+    records: [경찰청 중간관리자 리더십 (15차수), 삼성전자 변화리더 과정 (7차수), SPC그룹 예비팀장 과정 (5차수), 현대로템 예비리더 과정 (6차수)]
+
+  - slug: bridge-leadership
+    cat: leadership
+    title: 중간관리자 · 브릿지 리더십
+    subtitle: 위로는 팔로워십, 아래로는 리더십
+    target: 파트장, 차·부장, 중간관리자, 시니어 승진자
+    hours: 7시간 (2~4시간 단축형 가능)
+    summary: >-
+      상사와 구성원 사이에서 가교 역할을 하는 중간관리자에게 필요한 소통, 성과관리,
+      팔로워십, 상호신뢰를 한 과정으로 묶었습니다.
+    modules:
+      - name: 중간관리자에게 요구되는 리더십
+        hours: 0.5H
+        points: [좋은 리더 선배 vs 꼰대, 가교형 리더십·영향력·팔로워십]
+      - name: 가교형 리더십(소통)
+        hours: 1.0H
+        points: [차이를 인정하는 소통, 세대별 생각 차이 5가지 주제]
+      - name: 성과관리 — 리더 측면
+        hours: 3.5H
+        points: [임파워먼트 전략, 동기부여, 구조화된 업무지시, 업무 위임과 코칭]
+      - name: 성과관리 — 팔로워 측면
+        hours: 1.0H
+        points: [시간관리와 우선순위, 1일 계획표]
+      - name: 상호신뢰
+        hours: 1.0H
+        points: [신뢰의 원천, 나만의 원칙 만들기]
+    signature: [이영자와 매니저(임파워먼트), 양세형 사원의 하루, 진실을 말할 것인가]
+    records: [건강보험심사평가원 넥스트 리더 (13차수), CJ텔레닉스 중간관리자 리더십 (4차수), 삼성디스플레이 승격자 과정 (5차수)]
+
+  - slug: ai-leadership
+    cat: leadership
+    title: AI 시대의 리더십
+    subtitle: 지시의 기술에서 검증의 리더십으로
+    target: 팀장·임원, AI 도입 조직의 리더
+    hours: 4.5~6시간 워크숍
+    summary: >-
+      프롬프트를 '업무지시의 기술'로 다루고, AI가 만든 결과를 검증하는 비판적 의사결정,
+      AI 도입기에 불안한 구성원을 이끄는 감성 리더십과 우리 조직의 AI 활용 원칙까지 만듭니다.
+    modules:
+      - name: 리더십의 진화와 AX 마인드셋
+        hours: 1.0H
+        points: [지시형 → 참여형 → 생성형 리더십, 프롬프트의 6요소, 프롬프트 노하우 공유]
+      - name: 의사결정(비판적 사고)
+        hours: 1.0~2.0H
+        points: [할루시네이션 검증 전략, 결정의 주체인 리더, 악마의 대변인 활용]
+      - name: 팀 관리(감성 리더십)
+        hours: 1.5~2.0H
+        points: ["AI 리터러시 코칭", "심리적 안전감과 변화관리", "데이터 기반 1:1 면담 설계"]
+      - name: AI 활용 원칙
+        hours: 1.0H
+        points: [우리 회사의 AI 활용 원칙 수립(워크숍 결과물)]
+    signature: [밀그램의 실험, 진실을 말할 것인가, AI 활용 10계명]
+    records: [인천상공회의소 리더를 위한 AI 소통법, 한국능률협회 AI 활용 공개과정]
+
+  - slug: planning
+    cat: performance
+    title: 기획력
+    subtitle: 상사의 의중 파악부터 전략 수립까지
+    target: 사원~과장, 기획 업무 담당자
+    hours: 8시간
+    summary: >-
+      기획을 '문제 + 해결'로 정의하고, 개선형 기획(문제 해결)과 창조형 기획(가치 창출)
+      두 가지 흐름을 실습 과제로 끝까지 따라가 봅니다.
+    modules:
+      - name: 기획 마인드
+        hours: 0.5H
+        points: [기획 vs 계획, 개선형·창조형 / 제안형·답신형 기획]
+      - name: 문제 파악
+        hours: 2.0H
+        points: [상사의 의중 파악(배경·목적·제약), 문제 발견의 3가지 법칙, 문제의 3가지 유형]
+      - name: 원인 분석(개선형)
+        hours: 1.5H
+        points: [Fact-Base 사고, MECE와 Logic Tree, 원인 검증과 문제점 도출]
+      - name: 과제 설정
+        hours: 2.0H
+        points: [다빈치 기법·ERRC, 최적안 선정(매트릭스)]
+      - name: 환경분석·전략 도출(창조형)
+        hours: 2.0H
+        points: [PEST·3C·교차 SWOT, STP·차별화 전략·4P]
+    signature: [지식의 저주, 미로를 탈출하라, 라면가게 신메뉴, 사무실을 이전하라]
+    records: [현대자동차그룹 기획력 (19차수), LS그룹 기획력 (14차수), 한국타이어 기획력 (9차수), 국가철도공단 기획력·보고서 (7차수)]
+
+  - slug: planning-report
+    cat: performance
+    title: 기획보고서 작성
+    subtitle: 내가 일한 순서가 아니라, 상사가 궁금한 순서로
+    target: 사원~과장, 보고서 작성이 잦은 실무자
+    hours: 8시간 (사전과제 포함)
+    summary: >-
+      사전과제로 가져온 본인 보고서를 분석·피드백하고, 개선형 기획보고서 1페이지로
+      다시 써 보는 실습 중심 과정입니다.
+    modules:
+      - name: 상사가 원하는 보고서
+        hours: 0.5H
+        points: [지시에 따라 달라지는 목차, 읽기 좋은 보고서의 구조]
+      - name: 항목별 작성 방법
+        hours: 2.0H
+        points: [Why-What-How-So What, 배경·목적·목표, 현황 vs 문제점, 과제와 실행계획]
+      - name: 보고서 분석과 피드백
+        hours: 1.0H
+        points: [타 기관 보고서 분석, 사전과제 강사 피드백]
+      - name: 개선형 기획보고서 작성
+        hours: 3.0H
+        points: [1페이지 다시 쓰기, 공유와 강사 피드백]
+      - name: 창조형 기획보고서
+        hours: 1.5H
+        points: [7단계 작성법, 전략체계도]
+    signature: [『미래예보』 검토 지시, 짜장면 시켰는데 짬뽕이 왔다]
+    records: [국가철도공단, 한국전력거래소, 한국가스공사, 미래에셋증권, 현대엠엔소프트]
+
+  - slug: work-management
+    cat: performance
+    title: 업무관리 (S.T.A.R Power)
+    subtitle: 주도적으로 일하는 4단계
+    target: 신입~대리, 일하는 방식을 바꾸고 싶은 실무자
+    hours: 8시간 (2·4시간 워크스마트 단축형 가능)
+    summary: >-
+      방향감각(Sense of Direction) → 태스크 관리(Task) → 우선순위 조정(Adjust Priority)
+      → 상사 커뮤니케이션(Reporting)의 S.T.A.R Power 흐름으로 일 잘하는 방법을 익힙니다.
+    modules:
+      - name: 방향감각
+        hours: 1.5H
+        points: [3분 테스트, 지식의 저주, BOSS(배경·목표·범위·일정)로 지시 이해]
+      - name: 태스크 관리
+        hours: 1.0H
+        points: [WBS, PERT, CPM — 은행강도 프로젝트]
+      - name: 우선순위 조정
+        hours: 1.5H
+        points: [4가지 시간 관리, 긴급도·중요도, 1일 계획표]
+      - name: 상사 커뮤니케이션
+        hours: 3.0H
+        points: [문서작성 3원칙, 피라미드 구조, 보고의 5가지 원칙(10·50·80)]
+    signature: [양세형 사원의 하루, 은행강도 Project, 병원 예약은 지키면서]
+    records: [삼성반도체연구소 시간관리 (6차수), 삼성전자 업무관리 (5차수), 유한화학 업무관리, LS그룹 업무관리 (4차수)]
+
+  - slug: problem-solving
+    cat: performance
+    title: 문제해결
+    subtitle: What · Why · How · Action
+    target: 신입사원~승진자, 전 직급
+    hours: 2~16시간 (계층별 맞춤)
+    summary: >-
+      문제 정의 → 원인 분석 → 대안 수립 → 실행관리의 4단계를 우리 조직의 실제 문제로
+      실습하고, 개인 과제로 현업 적용 계획까지 세웁니다.
+    modules:
+      - name: 문제해결의 기본과 문제 정의
+        hours: ""
+        points: [문제의 3가지 유형, 문제 발견의 3가지 법칙]
+      - name: 원인 분석
+        hours: ""
+        points: [MECE·Logic Tree, 5Why, 페르미 추정, Fact-Base 사고]
+      - name: 대안 수립
+        hours: ""
+        points: [해결안 도출(확산), 최적안 선정(Pay-off Matrix)]
+      - name: 실행관리와 종합실습
+        hours: ""
+        points: [리스크 예방·발생 대책, 개인 과제 종합실습]
+    signature: ["미 폭격기 사례", "서울에서 하루에 팔리는 짜장면은?", "2명의 상인 이야기"]
+    records: [LS그룹 문제해결 (49차수), 삼성전자 창의적 문제해결 (6차수), GS리테일 문제해결 (5차수), KCC그룹 문제해결]
+
+  - slug: official-document
+    cat: performance
+    title: 기안문 · 공문서 작성
+    subtitle: 명확하게, 간결하게
+    target: 공공기관·공기업 직원
+    hours: 4~6시간
+    summary: >-
+      기안문 작성 원칙과 공공언어 표기법을 익히고, 노트북으로 직접 기안문을 작성한 뒤
+      피드백을 받습니다. 정책·기획보고서 작성법까지 이어집니다.
+    modules:
+      - name: 기안문 작성 방법
+        hours: 3.0H
+        points: [공문서 유형, 기안문 작성 원칙, 공공언어 표기법]
+      - name: 기안문 작성 실습
+        hours: 1.0H
+        points: [조건에 맞는 기안문 작성과 피드백]
+      - name: 기획보고서 작성
+        hours: 2.0H
+        points: [공문서의 종류, 기획보고서 구조와 패턴]
+    signature: [메모 전달하기, 개조식으로 바꾸기]
+    records: []
+
+  - slug: ai-planning
+    cat: performance
+    title: AI를 활용한 기획서 · 사업계획서
+    subtitle: AI에게 맥락을 주고, 사람은 판단한다
+    target: 기획·재무·전략 부서 실무자
+    hours: 6~8시간
+    summary: >-
+      프롬프트 6요소로 AI에게 일을 맡기는 법을 익히고, 개선형·창조형 기획보고서를
+      AI와 함께 작성합니다. 시나리오 플래닝까지 실습합니다.
+    modules:
+      - name: 기획 개념과 프롬프트 엔지니어링
+        hours: 1.0H
+        points: [기획 vs 계획, 프롬프트의 6요소]
+      - name: 개선형 기획보고서
+        hours: 2.5H
+        points: [AI로 원인 도출·로직트리, 과제 도출]
+      - name: 창조형 기획보고서
+        hours: 2.5H
+        points: [환경분석, 시나리오 플래닝, 신사업 구분]
+    signature: [여행 준비하기, 우리 팀 시나리오 플래닝]
+    records: [한국능률협회 AI 활용 공개과정, 삼일아카데미]
+
+  - slug: communication-collaboration
+    cat: org
+    title: 소통과 협업
+    subtitle: 장자로부터 배우는 소통의 지혜
+    target: 전 직급
+    hours: 8시간 (4시간 단축형 가능)
+    summary: >-
+      차이를 인정하고 상대의 니즈에 맞춰 소통하는 법, 관계를 만드는 법, 협업 장벽을
+      넘는 법을 게임과 토의로 체험합니다. 협업의 기본인 신뢰로 마무리합니다.
+    modules:
+      - name: 장자로부터 배우는 소통의 지혜
+        hours: 1.5H
+        points: [송나라 상인·바닷새·조삼모사, 세대 간 생각 차이]
+      - name: 효과적인 소통과 관계 형성
+        hours: 2.0H
+        points: [지식의 저주, 경청과 질문, 조하리의 창]
+      - name: 협업
+        hours: 2.5H
+        points: [독거미를 제거하라(협업 장벽 게임), 협업 구축의 3요소]
+      - name: 협업의 기본, 신뢰
+        hours: 2.0H
+        points: [진실을 말할 것인가, 블럭 쌓기, 신뢰의 원천]
+    signature: [박자 듣고 노래 제목 맞히기, 독거미를 제거하라, 블럭 쌓기]
+    records: [커머스플래닛 전사원 소통활성화 (13차수), 삼성전자 소통과 협업, 롯데로지스틱스 한마음 과정 (5차수)]
+
+  - slug: org-activation
+    cat: org
+    title: 조직활성화 · 변화관리
+    subtitle: 변화는 남이 아니라 내가 할 수 있는 것부터
+    target: 승진자, 통합·변화를 앞둔 조직
+    hours: 8시간
+    summary: >-
+      왜 변해야 하는지(Why)에서 시작해 개인 마인드·소통·협업 차원에서 무엇을 할지(What)를
+      정하고, 변화 실천계획(Continue·Start·Stop)으로 마무리합니다.
+    modules:
+      - name: 왜 변화해야 하는가
+        hours: 1.0H
+        points: [지는 가위바위보, 변화의 4가지 축]
+      - name: 개인 마인드
+        hours: 1.0H
+        points: [적극적 사고, 긍정적 이탈, 긍정의 힘]
+      - name: 소통
+        hours: 4.0H
+        points: [차이를 인정하는 소통, 관찰과 경청, 변화 메시지 전달(C.O.R.E)]
+      - name: 협업과 실천계획
+        hours: 2.0H
+        points: [협업을 통해 목표 달성, 변화 실천계획]
+    signature: [가위바위보 챔피언, 도깨비의 능력으로 바꾼다면, 무한상사 중대발표]
+    records: [부산시 비전공감 (11차수), 현대엠엔소프트 전사원 한방향 정렬 (4차수), 서울시설공단 핵심가치 내재화]
+
+  - slug: in-house-instructor
+    cat: org
+    title: 사내강사 양성
+    subtitle: 우리 회사의 강의는 우리 사람이
+    target: 사내강사 후보, 교육담당자
+    hours: 협의
+    summary: >-
+      교육담당자·컨설턴트·강사 경험을 바탕으로 교안 설계, 오프닝, 전달 기법, 참여를
+      이끄는 진행 방법을 실습 중심으로 다룹니다.
+    modules: []
+    signature: [공감할 만한 문구로 여는 오프닝]
+    records: [금융감독원 사내강사 양성 (5차수), 한국소비자원 사내강사 양성, 경찰청 사내강사 양성]
