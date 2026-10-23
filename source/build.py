@@ -305,9 +305,9 @@ VIDEOS = r'''
   <div class="cards">
   {% for e in MEDIA.episodes %}
     <article class="card" id="{{ e.slug }}">
-      <img src="{{ root }}assets/img/{{ e.thumb }}" alt="">
+      {% if e.youtube %}<div style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000"><iframe src="https://www.youtube-nocookie.com/embed/{{ e.youtube }}" title="{{ e.title }}" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>{% else %}<img src="{{ root }}assets/img/{{ e.thumb }}" alt="">{% endif %}
       <span class="k">{{ e.theme }}</span><h2 class="t" style="font-size:var(--fs-m)">{{ e.title }}</h2><p class="d">{{ e.desc }}</p>
-      <p class="d">{% if e.youtube %}<a href="https://www.youtube.com/watch?v={{ e.youtube }}" target="_blank" rel="noopener">유튜브에서 보기</a>{% else %}<span class="tag">공개 예정</span>{% endif %}
+      <p class="d">{% if e.youtube %}<a href="https://www.youtube.com/watch?v={{ e.youtube }}" target="_blank" rel="noopener">유튜브에서 보기</a>{% if e.shorts %} · <a href="https://www.youtube.com/shorts/{{ e.shorts }}" target="_blank" rel="noopener">쇼츠</a>{% endif %}{% else %}<span class="tag">공개 예정</span>{% endif %}
       {% if CMAP.get(e.program) %} · 관련 과정 <a href="{{ root }}programs/{{ e.program }}.html">{{ CMAP[e.program].title }}</a>{% endif %}</p>
     </article>
   {% endfor %}
