@@ -339,7 +339,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div><label for="f-name">담당자 성함 · 부서</label><input id="f-name" name="name" required></div>
       <div><label for="f-mail">회신 받을 이메일</label><input id="f-mail" name="mail" type="email" autocomplete="email" required></div>
       <div><label for="f-tel">연락처</label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
-      <div><label for="f-course">관심 과정</label><select id="f-course" name="course"><option value="">선택하세요</option><option value="team-leader-leadership">팀장 리더십</option><option value="bridge-leadership">중간관리자 · 브릿지 리더십</option><option value="ai-leadership">AI 시대의 리더십</option><option value="planning">기획력</option><option value="planning-report">기획보고서 작성</option><option value="work-management">업무관리 (S.T.A.R Power)</option><option value="problem-solving">문제해결</option><option value="official-document">기안문 · 공문서 작성</option><option value="ai-planning">AI를 활용한 기획서 · 사업계획서</option><option value="communication-collaboration">소통과 협업</option><option value="org-activation">조직활성화 · 변화관리</option><option value="in-house-instructor">사내강사 양성</option><option value="etc">기타 · 맞춤 과정</option></select></div>
+      <div><label for="f-course">관심 과정</label><select id="f-course" name="course"><option value="">선택하세요</option><option value="team-leader-leadership">팀장 리더십</option><option value="bridge-leadership">중간관리자 · 브릿지 리더십</option><option value="ai-leadership">AI 시대의 리더십</option><option value="planning">기획력</option><option value="planning-report">기획보고서 작성</option><option value="work-management">업무관리 (S.T.A.R Power)</option><option value="problem-solving">문제해결</option><option value="official-document">기안문 · 공문서 작성</option><option value="ai-planning">AI를 활용한 기획서 작성</option><option value="communication-collaboration">소통과 협업</option><option value="org-activation">조직활성화 · 변화관리</option><option value="in-house-instructor">사내강사 양성</option><option value="etc">기타 · 맞춤 과정</option></select></div>
       <div><label for="f-target">대상 · 인원</label><input id="f-target" name="target" placeholder="예: 신임팀장 25명"></div>
       <div><label for="f-when">희망 일정 · 시간</label><input id="f-when" name="when" placeholder="예: 12월 중, 8시간"></div>
       <div><label for="f-place">장소</label><input id="f-place" name="place" placeholder="예: 본사 교육장"></div>
@@ -366,7 +366,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </div></section>
 <script>
 (function(){
-  var f=document.getElementById('req'), names={ "team-leader-leadership":"팀장 리더십","bridge-leadership":"중간관리자 · 브릿지 리더십","ai-leadership":"AI 시대의 리더십","planning":"기획력","planning-report":"기획보고서 작성","work-management":"업무관리 (S.T.A.R Power)","problem-solving":"문제해결","official-document":"기안문 · 공문서 작성","ai-planning":"AI를 활용한 기획서 · 사업계획서","communication-collaboration":"소통과 협업","org-activation":"조직활성화 · 변화관리","in-house-instructor":"사내강사 양성", etc:"기타 · 맞춤 과정"};
+  var f=document.getElementById('req'), names={ "team-leader-leadership":"팀장 리더십","bridge-leadership":"중간관리자 · 브릿지 리더십","ai-leadership":"AI 시대의 리더십","planning":"기획력","planning-report":"기획보고서 작성","work-management":"업무관리 (S.T.A.R Power)","problem-solving":"문제해결","official-document":"기안문 · 공문서 작성","ai-planning":"AI를 활용한 기획서 작성","communication-collaboration":"소통과 협업","org-activation":"조직활성화 · 변화관리","in-house-instructor":"사내강사 양성", etc:"기타 · 맞춤 과정"};
   try{var q=new URLSearchParams(location.search).get('course'); if(q&&names[q]) f.course.value=q;}catch(e){}
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
