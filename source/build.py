@@ -18,6 +18,7 @@ def load(name):
         return yaml.safe_load(f)
 
 P = load('profile.yml'); PROG = load('programs.yml'); HIST = load('history.yml'); MEDIA = load('media.yml')
+for _e in MEDIA['episodes']: _e['series_name']=_e.get('series') or '리더의 한 장면'
 P.setdefault('naver_verification', ''); P.setdefault('google_verification', '')
 for _h in HIST.get('recent') or []: _h['date']=str(_h['date'])
 ARCH = load('history_archive.yml')['archive']
@@ -153,12 +154,12 @@ INDEX = r'''
 </div></section>
 
 <section class="section tint"><div class="wrap">
-  <div class="sec-head"><div><p class="eyebrow">Leader's Scene</p><h2 class="h2">리더의 한 장면</h2>
-  <p class="lede">강의장에서 실제로 나누는 이야기를 짧은 영상으로 옮겼습니다. 장면 하나를 보고, 내 팀이라면 어떨지 생각해 보는 시리즈입니다.</p></div>
+  <div class="sec-head"><div><p class="eyebrow">Scene Series</p><h2 class="h2">리더의 한 장면 · 일잘러의 한 장면</h2>
+  <p class="lede">강의장에서 실제로 나누는 이야기를 짧은 영상으로 옮겼습니다. 리더를 위한 '리더의 한 장면', 실무자를 위한 '일잘러의 한 장면' 두 시리즈로 소개합니다.</p></div>
   <a class="more" href="{{ root }}videos.html">영상 전체 보기 →</a></div>
   <div class="cards">
     {% for e in MEDIA.episodes %}
-    <a class="card" href="{{ root }}videos.html#{{ e.slug }}"><img src="{{ root }}assets/img/{{ e.thumb }}" alt=""><span class="k">{{ e.theme }}</span><span class="t">{{ e.title }}</span><span class="d">{{ e.desc }}</span></a>
+    <a class="card" href="{{ root }}videos.html#{{ e.slug }}"><img src="{{ root }}assets/img/{{ e.thumb }}" alt=""><span class="k">{{ e.series or '리더의 한 장면' }} · {{ e.theme }}</span><span class="t">{{ e.title }}</span><span class="d">{{ e.desc }}</span></a>
     {% endfor %}
   </div>
 </div></section>
@@ -299,11 +300,15 @@ COURSE = r'''
 '''
 
 VIDEOS = r'''
-<section class="page-head"><div class="wrap"><p class="crumb">강의영상</p><h1>리더의 한 장면</h1>
-<p class="lede">강의장에서 실제로 나누는 이야기를 5~7분 영상으로 옮겼습니다.</p></div></section>
+<section class="page-head"><div class="wrap"><p class="crumb">강의영상</p><h1>리더의 한 장면 · 일잘러의 한 장면</h1>
+<p class="lede">강의장에서 실제로 나누는 이야기를 5~7분 영상으로 옮겼습니다. 리더를 위한 '리더의 한 장면', 실무자를 위한 '일잘러의 한 장면'입니다.</p></div></section>
+{% for sname, sdesc in [('리더의 한 장면','팀장·파트장 등 팀을 이끄는 리더를 위한 이야기'),('일잘러의 한 장면','기획·보고·문제해결 등 실무자를 위한 이야기')] %}
+{% set eps = MEDIA.episodes | selectattr('series_name','equalto',sname) | list %}
+{% if eps %}
 <section class="section"><div class="wrap">
+  <p class="eyebrow">{{ sdesc }}</p><h2 class="h2" style="margin-bottom:16px">{{ sname }}</h2>
   <div class="cards">
-  {% for e in MEDIA.episodes %}
+  {% for e in eps %}
     <article class="card" id="{{ e.slug }}">
       {% if e.youtube %}<div style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000"><iframe src="https://www.youtube-nocookie.com/embed/{{ e.youtube }}" title="{{ e.title }}" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>{% else %}<img src="{{ root }}assets/img/{{ e.thumb }}" alt="">{% endif %}
       <span class="k">{{ e.theme }}</span><h2 class="t" style="font-size:var(--fs-m)">{{ e.title }}</h2><p class="d">{{ e.desc }}</p>
@@ -313,6 +318,8 @@ VIDEOS = r'''
   {% endfor %}
   </div>
 </div></section>
+{% endif %}
+{% endfor %}
 <section class="section tint"><div class="wrap">
   <p class="eyebrow">Lecture Clips</p><h2 class="h2" style="margin-bottom:16px">강의 장면</h2>
   <ul>{% for v in MEDIA.clips %}<li>{{ v.title }} {% if v.youtube %}<a href="https://www.youtube.com/watch?v={{ v.youtube }}" target="_blank" rel="noopener">보기</a>{% else %}<span class="tag">공개 예정</span>{% endif %}</li>{% endfor %}</ul>
@@ -443,7 +450,7 @@ def build():
         for c in COURSES:
             render(f'programs/{c["slug"]}.html', f'{c["title"]} 교육 과정 | 허진호 강사',
                    f'{c["title"]} 교육 — {c["subtitle"]}. 대상 {c["target"]}, {c["hours"]}. {c["summary"]}', 'programs', COURSE, c=c)
-        render('videos.html', '리더의 한 장면 | 허진호 강사', '허진호 강사의 리더십 이야기 영상 시리즈 리더의 한 장면.', 'videos', VIDEOS)
+        render('videos.html', '리더의 한 장면 · 일잘러의 한 장면 | 허진호 강사', '허진호 강사의 영상 시리즈 리더의 한 장면, 일잘러의 한 장면.', 'videos', VIDEOS)
         render('field.html', '강의 후기 | 허진호 강사', '허진호 강사의 기업교육 강의 후기 — 고객사별 진행 과정.', 'field', FIELD)
         for o in ORGS:
             render(f'field/{o["slug"]}.html', f'{o["name"]} 교육 | 허진호 강사', f'허진호 강사가 {o["name"]}에서 진행한 과정: ' + ', '.join(o['courses']), 'field', ORGPAGE, o=o)

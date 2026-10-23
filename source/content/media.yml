@@ -1,5 +1,5 @@
 # 강의영상 · 강의현장
-# episodes: '리더의 한 장면' 시리즈. youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
+# episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
   - slug: truth
     title: 융통성 vs 원칙, 팀원은 어떤 팀장을 신뢰할까
@@ -17,6 +17,16 @@ episodes:
     youtube: BP5bhlKoYRc
     shorts: XrEzPumHyU0
     desc: 두드리는 사람은 50%를 예상했지만 실제로 맞힌 건 2.5%. 팀장의 지시가 안 통하는 이유를 박자 맞히기 실험으로 풀어 봅니다.
+
+  - slug: haengsu-potato
+    series: 일잘러의 한 장면
+    title: 보고 잘하는 직원은 무엇이 다를까? 적극성의 4가지 방향
+    theme: 보고 · 적극성 · 상사 지시 해석
+    program: planning-report
+    thumb: ep-haengsu.jpg
+    youtube: ""
+    shorts: ""
+    desc: 감자값을 알아 오라는 지시에 세 번 장터를 오간 직원과, 감자 파는 노인을 모시고 온 직원. 같은 지시가 왜 다른 결과로 이어졌을까요?
 
 # 강의 영상(강의 장면 일부) — 유튜브에 올린 뒤 ID를 넣습니다
 clips:
