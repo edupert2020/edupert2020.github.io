@@ -1,6 +1,14 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: playground-kids
+    title: 팀원 동기부여, 보상만으로는 안 되는 이유
+    theme: 동기부여 · 내적 동기 vs 외적 동기 · 보상의 함정
+    program: team-leader-leadership
+    thumb: ep-playground.jpg
+    youtube: vuq6E_bHOi8
+    shorts: _zndumW2kwo
+    desc: 돈을 주지 않아도 매일 신나게 축구하던 아이들이, 돈을 받기 시작하자 축구를 그만뒀습니다. 내적 동기와 외적 동기로 팀원 동기부여를 풀어 봅니다.
   - slug: three-gardeners
     title: 시킨 만큼만 하는 팀원 vs 먼저 제안하는 팀원, 동기부여의 중요성
     theme: 동기부여 · 주도적으로 일하는 팀원 · 성과 = 능력 × 동기
