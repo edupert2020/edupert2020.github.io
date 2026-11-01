@@ -1,6 +1,14 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: three-gardeners
+    title: 시킨 만큼만 하는 팀원 vs 먼저 제안하는 팀원, 동기부여의 중요성
+    theme: 동기부여 · 주도적으로 일하는 팀원 · 성과 = 능력 × 동기
+    program: team-leader-leadership
+    thumb: ep-gardener.jpg
+    youtube: oYtjo689_rI
+    shorts: lF-aLkIqvd8
+    desc: 내킬 때 오는 A, 요청한 대로만 하는 B, 더 좋은 방안을 먼저 제안하는 C. 세 정원사 이야기로 리더의 동기부여가 왜 중요한지 풀어 봅니다.
   - slug: truth
     title: 융통성 vs 원칙, 팀원은 어떤 팀장을 신뢰할까
     theme: 신뢰 · 융통성 vs 원칙과 기준
