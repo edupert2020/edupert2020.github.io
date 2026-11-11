@@ -1,6 +1,15 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: cloud-talk
+    series: 일잘러의 한 장면
+    title: "\"긴장해서 못 했어요\"는 원인이 아니다, 핑계와 원인의 차이"
+    theme: 원인 분석 · 핑계 vs 원인 · 감정은 대비할 조건 · 명장면
+    program: problem-solving
+    thumb: ep-cloud.jpg
+    youtube: QOt_eOkPZy4
+    shorts: XhuWiEVNcmg
+    desc: "\"자신감이 없었던 것 같아요.\" 선수의 대답에 김연경 감독은 \"그건 뜬구름 잡는 얘기\"라고 했습니다. 〈신인감독 김연경〉의 한 장면으로 일이 안 풀렸을 때 원인을 다음 행동으로 말하는 법을 풀어 봅니다."
   - slug: kimbujang-blame
     title: 실적이 안 나올 때 남 탓하는 팀장, 상무가 던진 한마디
     theme: 성과관리 · 외부 탓 vs 팀이 바꿀 수 있는 것 · 명장면
