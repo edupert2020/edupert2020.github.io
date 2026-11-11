@@ -1,6 +1,14 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: volleyball-feedback
+    title: 팀 성과가 안 날 때 팀장이 해야 할 말, "분위기 말고 배구를 해"
+    theme: 피드백 · 막연한 피드백 vs 구체적인 피드백 · 명장면
+    program: team-leader-leadership
+    thumb: ep-volleyball.jpg
+    youtube: ghZ1g-pNG_o
+    shorts: B5HRKHPXjtw
+    desc: 점수 차가 벌어진 작전타임, 선수들은 "분위기 살려 보자"고 했지만 감독은 "배구를 해야 돼"라고 했습니다. 〈신인감독 김연경〉의 한 장면으로 막연한 피드백과 구체적인 피드백의 차이를 풀어 봅니다.
   - slug: playground-kids
     title: 팀원 동기부여, 보상만으로는 안 되는 이유
     theme: 동기부여 · 내적 동기 vs 외적 동기 · 보상의 함정
