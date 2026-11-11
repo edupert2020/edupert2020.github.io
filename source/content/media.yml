@@ -1,6 +1,14 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: kimbujang-blame
+    title: 실적이 안 나올 때 남 탓하는 팀장, 상무가 던진 한마디
+    theme: 성과관리 · 외부 탓 vs 팀이 바꿀 수 있는 것 · 명장면
+    program: team-leader-leadership
+    thumb: ep-kimbujang.jpg
+    youtube: wRdLIvF4KOY
+    shorts: VPDIxDiXi58
+    desc: "\"왜 이렇게 2팀이랑 차이가 나나?\" 상무의 질문에 김 부장은 시장 탓, 팀원 탓을 했습니다. 〈서울 자가에 대기업 다니는 김 부장 이야기〉의 한 장면으로 성과가 안 날 때 원인을 어디에서 찾아야 하는지 풀어 봅니다."
   - slug: volleyball-feedback
     title: 팀 성과가 안 날 때 팀장이 해야 할 말, "분위기 말고 배구를 해"
     theme: 피드백 · 막연한 피드백 vs 구체적인 피드백 · 명장면
