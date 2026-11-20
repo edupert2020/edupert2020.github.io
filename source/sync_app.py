@@ -116,7 +116,53 @@ def main():
     hist['recent'] = keep
     with open(HIST, 'w', encoding='utf-8') as f:
         yaml.safe_dump(hist, f, allow_unicode=True, sort_keys=False)
+    sync_reviews(rows, out)
     print(json.dumps(out, ensure_ascii=False))
+
+
+def review_path(lid, d):
+    safe = re.sub(r'[^A-Za-z0-9-]', '', lid)[-12:] or 'x'
+    return os.path.join(ROOT, 'content', 'reviews', f"{d.get('date')}-app-{safe}.md")
+
+
+def sync_reviews(rows, out):
+    """앱에서 '홈페이지에 올리기'를 누른 강의 후기를 content/reviews/ 에 씀.
+    review.status: 초안 | 게시 요청 | 게시됨  (게시 요청·게시됨이면 파일을 최신 내용으로 유지, 그 밖이면 내림)"""
+    out.update({'reviews_written': [], 'reviews_removed': [], 'review_ids': []})
+    rdir = os.path.join(ROOT, 'content', 'reviews')
+    want = {}
+    for r in rows:
+        lid, d = r['id'], r['data']
+        rv = d.get('review') or {}
+        if rv.get('status') in ('게시 요청', '게시됨') and rv.get('body') and d.get('public', True) and d.get('state') != '취소':
+            want[lid] = (d, rv)
+    # 앱에서 내린 후기 파일 삭제 (app_id로 찾음)
+    for f in os.listdir(rdir):
+        if '-app-' not in f:
+            continue
+        fp = os.path.join(rdir, f)
+        m = re.match(r'^---\n(.*?)\n---\n', open(fp, encoding='utf-8').read(), re.S)
+        aid = (yaml.safe_load(m.group(1)) or {}).get('app_id') if m else None
+        if aid not in want or fp != review_path(aid, want[aid][0]):
+            os.remove(fp); out['reviews_removed'].append(f)
+    for lid, (d, rv) in want.items():
+        days = '' if not d.get('end_date') or d['end_date'] == d['date'] else '~' + '.'.join(str(int(x)) for x in d['end_date'].split('-')[1:]) + '.'
+        meta = {
+            'title': rv.get('title') or f"{d['course']} — {d['org']}",
+            'date': str(d['date']), 'org': d['org'], 'course': d['course'],
+            'target': d.get('target') or '', 'people': f"{d['people']}명" if d.get('people') else '',
+            'hours': rv.get('hours') or '', 'place': d.get('venue') or '',
+            'schedule': '.'.join(str(int(x)) for x in str(d['date']).split('-')) + '.' + days,
+            'program': d.get('program') or guess_program(d.get('course')),
+            'tags': [t for t in (rv.get('tags') or []) if t], 'photo': '', 'src': '', 'blog': rv.get('blog') or '',
+            'app_id': lid,
+        }
+        text = '---\n' + yaml.safe_dump(meta, allow_unicode=True, sort_keys=False) + '---\n' + rv['body'].strip() + '\n'
+        fp = review_path(lid, d)
+        old = open(fp, encoding='utf-8').read() if os.path.exists(fp) else None
+        if old != text:
+            open(fp, 'w', encoding='utf-8').write(text); out['reviews_written'].append(os.path.basename(fp))
+        out['review_ids'].append(lid)
 
 
 if __name__ == '__main__':

@@ -26,6 +26,15 @@ recent:
   status: ''
   confirm: false
   app_id: l20261112-ansan
+- date: '2026-11-04'
+  org: 한국능률협회 공개과정
+  course: AI를 활용한 기획 및 기획보고서
+  target: ''
+  sessions: 1
+  program: ai-planning
+  status: ''
+  confirm: false
+  app_id: l20261104-ai-planning
 - date: '2026-10-29'
   org: 화학물질안전원
   course: 소통과 협업
