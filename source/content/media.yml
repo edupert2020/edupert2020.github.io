@@ -1,6 +1,30 @@
 # 강의영상 · 강의현장
 # episodes: '리더의 한 장면'·'일잘러의 한 장면' 시리즈 (series 생략 시 리더의 한 장면). youtube에 영상 ID를 넣으면 페이지에 영상이 바로 붙습니다.
 episodes:
+  - slug: two-umpires
+    title: 실수를 말하는 팀, 덮는 팀 — 로봇 심판 시대의 두 심판
+    theme: 심리적 안전감 · 실수를 덮는 팀 vs 말하는 팀 · AI 시대 리더십 · 명장면
+    program: ai-leadership
+    thumb: ep-umpires.jpg
+    youtube: EZWyyTfAfSY
+    shorts: 2PQl2QDVpqA
+    desc: "\"우리가 빠져나갈 건 그것밖에 없어요.\" 2024년 프로야구 중계에 그대로 잡힌 심판들의 대화. 같은 해 정반대로 대응한 심판의 장면과 나란히 놓고, AI 시대 리더가 팀의 실수를 다루는 방법을 생각해 봅니다."
+  - slug: asking-leader
+    title: AI로 만든 보고서, 팀장은 어디를 봐야 할까
+    theme: 보고서 검토 · 묻는 리더 · 방향·틀린 곳·빠진 곳 · AI 시대 리더십
+    program: ai-leadership
+    thumb: ep-asking-leader.jpg
+    youtube: 266yZIeDfQc
+    shorts: T8K6ISm-fKM
+    desc: AI가 A학점 수준의 답을 내자 정재승 교수는 시험을 바꿨습니다. 쓰는 건 못 믿으니, 묻는 겁니다. 팀원이 AI로 만든 보고서를 볼 때 리더가 봐야 할 세 곳, 방향·틀린 곳·빠진 곳을 이야기합니다.
+  - slug: ai-link
+    title: "AI 보고서, 팀장은 어디를 봐야 할까? \"와, 다른 링크를 줬네\""
+    theme: 안목 · AI 결과물 검증 · 틀린 곳 vs 방향 · 명장면
+    program: ai-leadership
+    thumb: ep-ai-link.jpg
+    youtube: nH0ZIMBirwY
+    shorts: YOIqYcqRRoQ
+    desc: AI가 기사 링크에 검증 결과까지 붙여 답을 줬는데, 링크를 열어 보니 전혀 다른 기사였습니다. 카카오 〈AI대탈출〉의 한 장면으로 AI가 만든 결과물에서 어디를 짚어 봐야 하는지 아는 눈, 안목을 풀어 봅니다.
   - slug: cloud-talk
     series: 일잘러의 한 장면
     title: "\"긴장해서 못 했어요\"는 원인이 아니다, 핑계와 원인의 차이"
