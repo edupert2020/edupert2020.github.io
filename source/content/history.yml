@@ -1,4 +1,31 @@
 recent:
+- date: '2026-11-17'
+  org: 롯데면세점
+  course: AI를 활용한 기획 및 기획보고서
+  target: 재무팀
+  sessions: 1
+  program: ai-planning
+  status: ''
+  confirm: false
+  app_id: l20261117-lottedfs
+- date: '2026-11-16'
+  org: 도쿄일렉트론코리아
+  course: 역량평가
+  target: ''
+  sessions: 1
+  program: ''
+  status: ''
+  confirm: false
+  app_id: l20261116-tel
+- date: '2026-11-12'
+  org: 안산시
+  course: 간부공무원 프레젠테이션
+  target: 간부공무원
+  sessions: 1
+  program: ''
+  status: ''
+  confirm: false
+  app_id: l20261112-ansan
 - date: '2026-10-29'
   org: 화학물질안전원
   course: 소통과 협업
@@ -26,14 +53,6 @@ recent:
   status: ''
   confirm: false
   app_id: l20261027-kogas
-- date: 2026-10
-  org: 롯데면세점
-  course: AI를 활용한 기획보고서 작성
-  target: 재무팀
-  sessions: 1
-  program: ''
-  status: ''
-  confirm: false
 - date: '2026-09-10'
   org: 한국HRD교육센터
   course: 핵심인재 역량 고도화 과정
