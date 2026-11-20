@@ -375,6 +375,9 @@ REVIEW = r'''
     <a class="btn primary" href="{{ p.blog }}" target="_blank" rel="noopener">블로그 강의현장 보기 →</a>{% endif %}
   </div>
 </div></section>
+{% if r.app_id %}<section class="section" style="padding-top:0"><div class="wrap"><article class="rv-body">{{ r.html }}
+{% if r.gallery %}<div class="rv-gallery">{% for g in r.gallery %}<img src="{{ root }}assets/img/rv/{{ g }}" alt="{{ r.org }} {{ r.course }} 강의 현장" loading="lazy">{% endfor %}</div>{% endif %}
+</article></div></section>{% endif %}
 '''
 
 CONTACT = r'''

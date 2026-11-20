@@ -10,7 +10,10 @@
    `put('<기존 업종 이름>','<출강처>')` 한 줄을 추가하고 2단계를 다시 실행한다. (업종 이름은 파일 안의 기존 put 이름 중에서 고른다)
    - 강의 후기: 앱에서 '홈페이지에 올리기'를 누른 후기(review.status = 게시 요청/게시됨)를 `content/reviews/<날짜>-app-<id>.md`로 씀.
      후기를 내리거나 강의를 지우면 그 파일도 지움 → 결과의 reviews_written·reviews_removed·review_ids
-4. added·updated·removed·reviews_written·reviews_removed가 모두 비어 있으면 여기서 끝(커밋하지 않음).
+   - 후기 사진: 결과의 `photos_needed`([{id, dest}])마다 `read_asset`(slug, id, max_bytes 4194304)으로 사진을 받고,
+     결과에 나온 저장 파일 경로(Image source)로 `python3 source/sync_app.py --place <그 경로> <dest> <id>` 실행.
+     모두 넣은 뒤 2단계를 한 번 더 실행해 photos_needed가 비었는지 확인. (사진이 없는 후기는 남색 표지를 자동으로 만듦)
+4. added·updated·removed·reviews_written·reviews_removed가 모두 비어 있고 git status에 바뀐 파일이 없으면 여기서 끝(커밋하지 않음).
 5. `bash source/deploy.sh` → 빌드 결과가 저장소 최상위로 옮겨짐
 6. 커밋 메시지 `강의 이력 자동 반영: <고객사 과정명, ...>` 로 커밋하고 main에 푸시
 7. `published_ids`의 각 문서에 `db_write` merge로 `{"site": {"status": "반영됨", "at": "YYYY-MM-DD"}}` 기록
