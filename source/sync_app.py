@@ -80,7 +80,7 @@ def main():
         lid, d = r['id'], r['data']
         end = str(d.get('end_date') or d.get('date') or '')
         ok = (d.get('org') and d.get('course') and end and end < today
-              and d.get('public', True) and d.get('state') != '취소')
+              and d.get('public', True) and d.get('state', '확정') in ('확정', ''))
         if not ok:
             continue
         seen.add(lid)
@@ -184,7 +184,7 @@ def sync_reviews(rows, out):
     for r in rows:
         lid, d = r['id'], r['data']
         rv = d.get('review') or {}
-        if rv.get('status') in ('게시 요청', '게시됨') and rv.get('body') and d.get('public', True) and d.get('state') != '취소':
+        if rv.get('status') in ('게시 요청', '게시됨') and rv.get('body') and d.get('public', True) and d.get('state', '확정') in ('확정', ''):
             want[lid] = (d, rv)
     keep_imgs = set()
     for lid, (d, rv) in want.items():

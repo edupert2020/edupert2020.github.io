@@ -4,7 +4,7 @@
 
 1. `db_list`(slug, collection `lectures`)로 강의 기록을 모두 읽어 `[{"id":..., "data":{...}}]` 형태의 JSON 파일로 저장한다.
 2. `python3 source/sync_app.py <그 파일>` 실행 → 결과 JSON 확인
-   - 강의 마지막 날이 오늘 이전 + 공개(public) + 취소 아님 → `content/history.yml`에 추가·수정
+   - 강의 마지막 날이 오늘 이전 + 공개(public) + 진행 상태 '확정' (가예약·제안 중·취소는 올리지 않음) → `content/history.yml`에 추가·수정
    - 앱에서 지웠거나 비공개·취소로 바꾼 강의 → 홈페이지에서 내림
 3. 결과의 `unclassified`에 출강처가 있으면 `source/clients_map.py` 끝의 '출강 도우미 앱으로 새로 들어온 출강처' 아래에
    `put('<기존 업종 이름>','<출강처>')` 한 줄을 추가하고 2단계를 다시 실행한다. (업종 이름은 파일 안의 기존 put 이름 중에서 고른다)
