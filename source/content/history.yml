@@ -1,17 +1,17 @@
 recent:
 - date: '2026-11-17'
   org: 롯데면세점
-  course: AI를 활용한 기획 및 기획보고서
-  target: 재무팀
+  course: AI를 활용한 기획보고서 작성
+  target: 재무 및 기획 파트 신청자 16명
   sessions: 1
   program: ai-planning
   status: ''
   confirm: false
-  app_id: l20261117-lottedfs
+  app_id: 1zlq6y9fsmbqpblfp4m5
 - date: '2026-11-16'
   org: 도쿄일렉트론코리아
-  course: 역량평가
-  target: ''
+  course: 파트리더 역량평가 (평가위원)
+  target: 파트리더 18명
   sessions: 1
   program: ''
   status: ''
@@ -19,17 +19,18 @@ recent:
   app_id: l20261116-tel
 - date: '2026-11-12'
   org: 안산시
-  course: 간부공무원 프레젠테이션
-  target: 간부공무원
+  course: 고위·중간관리자 프레젠테이션 스피치 교육
+  target: 안산시 간부공무원 (고위·중간관리자) 6명
   sessions: 1
-  program: ''
+  program: bridge-leadership
   status: ''
   confirm: false
   app_id: l20261112-ansan
 - date: '2026-11-04'
   org: 한국능률협회 공개과정
-  course: AI를 활용한 기획 및 기획보고서
-  target: ''
+  course: '[여의도] 일잘러의 AI 활용 기획 및 기획서 작성 A to Z'
+  target: 공개교육 참가자 (제주테크노파크, 부산영상위원회, 한국전력거래소, 한국장학재단, 전국은행연합회, LG이노텍, 서울디자인재단, 한국원자력환경공단
+    등 다기관 직장인) 11명
   sessions: 1
   program: ai-planning
   status: ''
@@ -47,7 +48,7 @@ recent:
 - date: '2026-10-28'
   org: 롯데글로벌로지스
   course: 조직 내 스마트하게 일하는 방법
-  target: 직원 11명
+  target: 저성과자 11명
   sessions: 1
   program: work-management
   status: ''
