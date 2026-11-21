@@ -11,6 +11,7 @@ lectures.json: 앱 DB 'lectures' 컬렉션을 [{id, data}, ...] 형태로 내려
 import json, os, re, sys, datetime, yaml
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+HOLD, HOLD_RV = set(), set()
 HIST = os.path.join(ROOT, 'content', 'history.yml')
 
 # 과정명 → 홈페이지 프로그램 slug (앞에서부터 먼저 맞는 것)
@@ -70,10 +71,15 @@ def main():
     if '--today' in sys.argv:
         today = sys.argv[sys.argv.index('--today') + 1]
     rows = json.load(open(src, encoding='utf-8'))
+    # 민감한 내용이 있어 강사 확인을 기다리는 강의: 이번에는 반영하지 않고, 이미 올라간 것은 그대로 둠
+    global HOLD, HOLD_RV
+    HOLD = set(x for x in (sys.argv[sys.argv.index('--hold') + 1].split(',') if '--hold' in sys.argv else []) if x)
+    HOLD_RV = set(x for x in (sys.argv[sys.argv.index('--hold-review') + 1].split(',') if '--hold-review' in sys.argv else []) if x)
+    out_hold = sorted(HOLD | HOLD_RV)
     hist = yaml.safe_load(open(HIST, encoding='utf-8'))
     recent = hist.get('recent') or []
     by_id = {h.get('app_id'): h for h in recent if h.get('app_id')}
-    out = {'added': [], 'updated': [], 'removed': [], 'published_ids': []}
+    out = {'added': [], 'updated': [], 'removed': [], 'published_ids': [], 'held': out_hold}
     seen = set()
 
     for r in rows:
@@ -82,6 +88,9 @@ def main():
         ok = (d.get('org') and d.get('course') and end and end < today
               and d.get('public', True) and d.get('state', '확정') in ('확정', ''))
         if not ok:
+            continue
+        if lid in HOLD:
+            if lid in by_id: seen.add(lid)
             continue
         seen.add(lid)
         e = to_entry(lid, d)
@@ -186,7 +195,11 @@ def sync_reviews(rows, out):
         rv = d.get('review') or {}
         if rv.get('status') in ('게시 요청', '게시됨') and rv.get('body') and d.get('public', True) and d.get('state', '확정') in ('확정', ''):
             want[lid] = (d, rv)
+    held = {lid: want.pop(lid) for lid in list(want) if lid in HOLD_RV}
     keep_imgs = set()
+    for lid, (d, rv) in held.items():  # 확인 기다리는 후기: 이미 올라간 파일·사진은 그대로
+        slug = os.path.basename(review_path(lid, d))[:-3]
+        keep_imgs |= {k for k in man if k.startswith(slug)}
     for lid, (d, rv) in want.items():
         slug = os.path.basename(review_path(lid, d))[:-3]
         photos = [p['id'] for p in (rv.get('photos') or []) if p.get('id')]
@@ -216,6 +229,8 @@ def sync_reviews(rows, out):
         fp = os.path.join(rdir, f)
         m = re.match(r'^---\n(.*?)\n---\n', open(fp, encoding='utf-8').read(), re.S)
         aid = (yaml.safe_load(m.group(1)) or {}).get('app_id') if m else None
+        if aid in held:
+            continue
         if aid not in want or fp != review_path(aid, want[aid][0]):
             os.remove(fp); out['reviews_removed'].append(f)
     for lid, (d, rv, gallery) in want.items():
