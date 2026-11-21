@@ -29,8 +29,7 @@ recent:
 - date: '2026-11-04'
   org: 한국능률협회 공개과정
   course: '[여의도] 일잘러의 AI 활용 기획 및 기획서 작성 A to Z'
-  target: 공개교육 참가자 (제주테크노파크, 부산영상위원회, 한국전력거래소, 한국장학재단, 전국은행연합회, LG이노텍, 서울디자인재단, 한국원자력환경공단
-    등 다기관 직장인) 11명
+  target: 공공기관·기업 직원 11명
   sessions: 1
   program: ai-planning
   status: ''
@@ -48,7 +47,7 @@ recent:
 - date: '2026-10-28'
   org: 롯데글로벌로지스
   course: 조직 내 스마트하게 일하는 방법
-  target: 저성과자 11명
+  target: 직원 11명
   sessions: 1
   program: work-management
   status: ''
